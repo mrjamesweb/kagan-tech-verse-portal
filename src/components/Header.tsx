@@ -15,15 +15,15 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-white/10">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-white/10">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-r from-tech-blue to-tech-purple rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">K</span>
+          <div className="flex items-center space-x-3">
+            <div className="w-12 h-12 bg-gradient-to-r from-tech-blue to-tech-purple rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-xl">K</span>
             </div>
-            <span className="text-xl font-bold text-white">KaganTech</span>
+            <span className="text-2xl font-bold text-white">KaganTech</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -32,7 +32,7 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-muted-foreground hover:text-tech-blue transition-colors duration-300 font-medium"
+                className="text-muted-foreground hover:text-tech-blue transition-colors duration-300 font-medium text-lg"
               >
                 {item.name}
               </a>
@@ -41,7 +41,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="tech-button">
+            <Button className="tech-button text-lg px-8 py-3">
               Let's Connect
             </Button>
           </div>
@@ -51,25 +51,25 @@ const Header = () => {
             className="md:hidden text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-white/10">
-            <nav className="flex flex-col space-y-4">
+          <div className="md:hidden py-6 border-t border-white/10">
+            <nav className="flex flex-col space-y-6">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-muted-foreground hover:text-tech-blue transition-colors duration-300 font-medium"
+                  className="text-muted-foreground hover:text-tech-blue transition-colors duration-300 font-medium text-lg"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
-              <Button className="tech-button mt-4">
+              <Button className="tech-button mt-6 text-lg px-8 py-3">
                 Let's Connect
               </Button>
             </nav>

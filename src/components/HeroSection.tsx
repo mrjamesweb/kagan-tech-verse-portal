@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-tech-blue/20 rounded-full blur-3xl animate-pulse"></div>
@@ -16,18 +16,18 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left content */}
           <div className="text-center lg:text-left space-y-8 animate-fade-in">
-            <div className="space-y-4">
+            <div className="space-y-6">
               <h1 className="text-5xl lg:text-7xl font-bold">
                 <span className="text-white">KAGAN</span>
                 <span className="bg-gradient-to-r from-tech-blue to-tech-purple bg-clip-text text-transparent glow-text">
                   TECH
                 </span>
               </h1>
-              <div className="text-xl lg:text-2xl text-muted-foreground space-y-2">
+              <div className="text-xl lg:text-2xl text-muted-foreground space-y-3">
                 <p className="font-medium text-tech-blue">Narrative Specialist</p>
                 <p className="font-medium text-tech-green">Passionate Educator</p>
                 <p className="font-medium text-tech-purple">Real-Estate Mogul</p>
-                <p className="text-lg">Warrior for knowledge and impact.</p>
+                <p className="text-lg mt-4">Warrior for knowledge and impact.</p>
               </div>
             </div>
             
