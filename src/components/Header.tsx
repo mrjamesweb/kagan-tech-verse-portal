@@ -10,7 +10,6 @@ const Header = () => {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Content", href: "/content" },
     { name: "Connect", href: "/connect" }
   ];
 
@@ -19,11 +18,11 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-gradient-to-r from-tech-blue to-tech-purple rounded-lg flex items-center justify-center">
+          <Link to="/" className="flex items-center space-x-3 group">
+            <div className="w-12 h-12 bg-gradient-to-r from-tech-blue to-tech-purple rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
               <span className="text-white font-bold text-xl">K</span>
             </div>
-            <span className="text-2xl font-bold text-white">KaganTech</span>
+            <span className="text-2xl font-bold text-white group-hover:text-tech-blue transition-colors duration-300">KaganTech</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -32,9 +31,10 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className="text-muted-foreground hover:text-tech-blue transition-colors duration-300 font-medium text-lg"
+                className="text-muted-foreground hover:text-tech-blue transition-all duration-300 font-medium text-lg relative group"
               >
                 {item.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-tech-blue transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
           </nav>
@@ -42,7 +42,7 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Link to="/connect">
-              <Button className="tech-button text-lg px-8 py-3">
+              <Button className="tech-button text-lg px-8 py-3 hover:shadow-lg hover:shadow-tech-blue/25">
                 Let's Connect
               </Button>
             </Link>
@@ -50,7 +50,7 @@ const Header = () => {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden text-white"
+            className="md:hidden text-white hover:text-tech-blue transition-colors duration-300"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -59,7 +59,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-6 border-t border-white/10">
+          <div className="md:hidden py-6 border-t border-white/10 animate-fade-in">
             <nav className="flex flex-col space-y-6">
               {navItems.map((item) => (
                 <Link
