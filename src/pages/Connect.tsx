@@ -1,18 +1,18 @@
 
 import Header from "@/components/Header";
-import HeroSection from "@/components/HeroSection";
+import SocialSection from "@/components/SocialSection";
 import Footer from "@/components/Footer";
 
-const Index = () => {
+const Connect = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <main>
-        <HeroSection />
+      <main className="pt-20">
+        <SocialSection />
       </main>
       <Footer />
     </div>
   );
 };
 
-export default Index;
+export default Connect;
